@@ -104,7 +104,7 @@ class RPCClient extends EventEmitter {
     }
     this._connectPromise = new Promise((resolve, reject) => {
       this.clientId = clientId;
-      const timeout = setTimeout(() => reject(new Error('RPC_CONNECTION_TIMEOUT')), 10e3);
+      const timeout = setTimeout(() => reject(new Error('RPC_CONNECTION_TIMEOUT')), 15e3);
       timeout.unref();
       this.once('connected', () => {
         clearTimeout(timeout);
